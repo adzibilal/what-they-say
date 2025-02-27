@@ -8,6 +8,14 @@ const nextConfig = {
         fullySpecified: false
       }
     });
+
+    // Menambahkan konfigurasi untuk package.json files
+    config.module.rules.push({
+      test: /package\.json$/,
+      loader: 'json-loader',
+      type: 'javascript/auto'
+    });
+
     return config;
   }
 };
